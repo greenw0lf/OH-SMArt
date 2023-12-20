@@ -1,0 +1,82 @@
+{
+  "text": " Where do you, where do you put it?",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.3,
+      "end": 2.92,
+      "text": " Where do you, where do you put it?",
+      "tokens": [
+        50364,
+        2305,
+        360,
+        291,
+        11,
+        689,
+        360,
+        291,
+        829,
+        309,
+        30,
+        50514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5221681594848633,
+      "compression_ratio": 1.0303030303030303,
+      "no_speech_prob": 0.31277501583099365,
+      "confidence": 0.793,
+      "words": [
+        {
+          "text": "Where",
+          "start": 0.3,
+          "end": 1.02,
+          "confidence": 0.506
+        },
+        {
+          "text": "do",
+          "start": 1.02,
+          "end": 1.22,
+          "confidence": 0.893
+        },
+        {
+          "text": "you,",
+          "start": 1.22,
+          "end": 1.46,
+          "confidence": 0.895
+        },
+        {
+          "text": "where",
+          "start": 1.46,
+          "end": 1.8,
+          "confidence": 0.822
+        },
+        {
+          "text": "do",
+          "start": 1.8,
+          "end": 2.08,
+          "confidence": 0.904
+        },
+        {
+          "text": "you",
+          "start": 2.08,
+          "end": 2.34,
+          "confidence": 0.897
+        },
+        {
+          "text": "put",
+          "start": 2.34,
+          "end": 2.72,
+          "confidence": 0.664
+        },
+        {
+          "text": "it?",
+          "start": 2.72,
+          "end": 2.92,
+          "confidence": 0.871
+        }
+      ]
+    }
+  ],
+  "language": "en"
+}
