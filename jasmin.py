@@ -11,6 +11,8 @@ def process_utterance(utter, file_id, spk_id):
   else:
     text = re.sub(r'\*.', '', utter[2][1:len(utter[2])-2])
     text = re.sub('ggg', '', text)
+    text = re.sub('xxx', '', text)
+    text = re.sub('Xxx', '', text)
     if text == '\n':
       res += 'inter_segment_gap ' + utter[0][0:len(utter[0])-2] + ' ' + utter[1][0:len(utter[1])-2] + ' <o,f0,>'
     else:
