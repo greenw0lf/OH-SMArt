@@ -23,7 +23,7 @@ for file in os.listdir(args.input):
     if len(split_on_json) < 2:
         continue
 
-    with open(args.input + file) as file_to_val:
+    with open(args.input + file, encoding='utf-8') as file_to_val:
         lines = file_to_val.readlines()
 
         i = 0
