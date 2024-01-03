@@ -1,5 +1,4 @@
 import argparse
-import json
 import os
 
 # Initialize parser
@@ -7,7 +6,7 @@ parser = argparse.ArgumentParser()
 
 
 parser.add_argument('-in', '--input', help = 'path to the CTM files directory',
-                    default='input_dir/')
+                    default='output_dir/')
  
 # Read arguments from command line
 args = parser.parse_args()

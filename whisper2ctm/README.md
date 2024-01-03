@@ -1,9 +1,6 @@
 # Whisper output to CTM
 ## Description
-This is a simple tool that I created since I needed to convert the output of [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped) to the format required by the [ASR-NL-benchmark](https://github.com/opensource-spraakherkenning-nl/ASR_NL_benchmark) tool.
-
-## Requirements
-- Python 3.x.x (I tested using Python version 3.11.6 but older/newer versions should also be working just as fine)
+This is a simple tool that I created for converting the output of [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped) to the format required by the [ASR-NL-benchmark](https://github.com/opensource-spraakherkenning-nl/ASR_NL_benchmark) tool.
 
 ## Setup & Example run
 Simply clone the repo locally, then use your preferred type of terminal and navigate to the local repo directory. From there, you can run:
@@ -28,7 +25,7 @@ The output format is called a Time Marked Conversation file. More information ab
 
 A very brief summary is that it is a file made up of multiple lines, each line having a timestamped word. The format of a line is:
 
-File_id Channel Begin_time Duration Word Confidence
+    File_id Channel Begin_time Duration Word Confidence
 
 You can add comments by adding ';;' at the start of the line.
 
@@ -59,17 +56,23 @@ The filename format expected when using the `--stereo` argument is `{File_id}-{1
 You can run it on the examples provided as so:
 
 ```python main.py -in stereo_input -out stereo_output --stereo```
-<br><br><br><br>
+<br><br><br>
 As for the `--jasmin` flag, the issue I faced with Jasmin and Whisper is that the first word of a segment in the reference file would be considered as a deletion and the same word in the hypothesis file was an insertion. This was because the alignment algorithm used for Whisper or the alignments of the Jasmin reference files were not accurate. This flag will realign the first word of each segment such that it starts at the predicted end time minus 0.1 seconds. This heavily reduced the number of insertions and deletions and, thus, the WER was lower.
 
 To be more specific, the new `start` of the first word in each segment in the hypothesis file becomes `end - 0.1`.
 
-## Useful tool: `merge_ctm.py`
-I also needed a tool to merge the different CTM transcriptions generated into one file. There are some optional arguments here as well, similar to the main script:
-- `-in/--input`: Should correspond to the absolute/local path to the directory where the CTM files to be merged can be found
-- `-out/--output`: Should correspond to the absolute/local path + name of the CTM merged file to be generated
+## Useful tool: `validate_ctm.py`
+In some cases, I encountered errors with the output given by Whisper. The particular error that this tool detects is when there is more than one word per line. For example:
 
-Examples can be found in the code. It is required to have all the files to be merged into one directory.
+    filename 1 16.61 0.46 Beeld & 0.89
+
+The tool simply checks if there are 6 separate strings separated by space on each line (if it meets the format requirement as described in the section above).
+
+The command to run is:
+
+```python validate_ctm.py -in path/to/ctm/files/folder```
+
+Replace `path/to/ctm/files/folder` with the path where the CTM files to be validated can be found. 
 
 ## Acknowledgements
 - [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped): Whisper Speech Recognition using word-level timestamps and confidence (License GPL v3)
