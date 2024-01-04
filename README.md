@@ -17,3 +17,18 @@ A tool to merge files of the same extension into one file. There are some option
 - `--file_ext`: The extension of the files to be merged. Default is `ctm`
 
 Examples can be found in the code. It is required to have all the files to be merged into one directory.
+
+## `jasmin2stm.py`
+This script converts files in ORT format of the JASMIN corpus transcriptions to files in STM format accepted by sclite. There are some optional arguments:
+- `-corpus_path`: The absolute/local path to the JASMIN corpus (the directory structure inside the corpus folder should be identical to the format mentioned in the corpus' documentation)
+- `-out_path`: The absolute/local path to the output directory. Its structure must be the following:
+```
+output_dir
+├───comp-p
+│   ├───nl
+│   └───vl
+└───comp-q
+    ├───nl
+    └───vl
+```
+- `-vl`: Use it if you want to convert the Flemish part of JASMIN instead of the Dutch one
