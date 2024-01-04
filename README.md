@@ -32,3 +32,5 @@ output_dir
     └───vl
 ```
 - `-vl`: Use it if you want to convert the Flemish part of JASMIN instead of the Dutch one
+
+For HMI speech, the machine utterances are ignored.
