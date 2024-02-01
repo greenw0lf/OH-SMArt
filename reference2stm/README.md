@@ -19,3 +19,6 @@ output_dir
 For HMI speech, the machine utterances are ignored.
 ## `segment_nbest.ipynb`
 This Jupyter Notebook segments the audio and STM files of the N-Best 2008 Evaluation corpus. It contains code that deals with the Dutch subsets of the corpus, but changes can be easily made to accommodate the Flemish subsets. For more information about how it works, check out the notebook itself.
+
+## `silence_jasmin.ipynb`
+This Jupyter Notebook takes the first channel (corresponding to the human speaker) in Jasmin HMI speech recordings and silences the gaps inbetween the human-spoken segments. Important to notice is that the gaps inbetween the human segments are annotated using `inter_segment_gap` as an identifier. This identifier is used when applying silence. The audio is silenced using pydub's `AudioSegment.silent()`. For more details, read the notebook.
