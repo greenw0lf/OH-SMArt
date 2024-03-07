@@ -3,6 +3,7 @@ Code related to the work done at University of Twente on the OH-SMArt project.
 
 ## Repo structure
 
+- `evaluation` - contains the code that runs Whisper on audio to generate transcriptions
 - `whisper2ctm` - contains the code that converts the output of Whisper to the CTM file format required by sclite. For more details, check out the README inside the folder
 - `reference2stm` - contains the code used for processing the reference files of the datasets used in evaluation. For more details, check out the README inside the folder
 - `merge_files.py` - a helper script that merges text-like files into one (also works with CTM and STM formats)

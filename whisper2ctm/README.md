@@ -72,8 +72,12 @@ The command to run is:
 
 ```python validate_ctm.py -in path/to/ctm/files/folder```
 
-Replace `path/to/ctm/files/folder` with the path where the CTM files to be validated can be found. 
+Replace `path/to/ctm/files/folder` with the path where the CTM files to be validated can be found.
+
+## Another useful tool: `ctm2txt.py`
+This code takes a word-level timestamped CTM file and converts it to a TXT file, with all the words concatenated on one line and without any timestamps or other information. I used this code to compare the outputs of `whisper-timestamped` and `faster-whisper` to see in more detail whether the timestamping created the difference in WER performance or if the transcriptions are also substantially different.
 
 ## Acknowledgements
 - [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped): Whisper Speech Recognition using word-level timestamps and confidence (License GPL v3)
 - [ASR-NL-benchmark](https://github.com/opensource-spraakherkenning-nl/ASR_NL_benchmark): ASR benchmark tool for the Dutch language (License MIT)
+- [faster-whisper](https://github.com/SYSTRAN/faster-whisper): Faster and memory-efficient implementation of Whisper (License MIT)
