@@ -69,4 +69,3 @@ for file in os.listdir(args.input):
     # Close both files
     inp.close()
     out.close()
-

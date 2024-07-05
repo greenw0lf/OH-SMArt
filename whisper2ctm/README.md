@@ -77,6 +77,40 @@ Replace `path/to/ctm/files/folder` with the path where the CTM files to be valid
 ## Another useful tool: `ctm2txt.py`
 This code takes a word-level timestamped CTM file and converts it to a TXT file, with all the words concatenated on one line and without any timestamps or other information. I used this code to compare the outputs of `whisper-timestamped` and `faster-whisper` to see in more detail whether the timestamping created the difference in WER performance or if the transcriptions are also substantially different.
 
+## Converting Huggingface Whisper output to CTM: `hf2ctm.py`
+
+### Format of Huggingface output (JSON)
+
+The output has the following format:
+
+```
+{
+    "words": [
+        {
+            "text": "So,",
+            "timestamp": [
+                0,
+                0.8
+            ]
+        },
+        {
+            "text": "let's",
+            "timestamp": [
+                0.8,
+                1.4
+            ],
+        },
+        ...
+    ]
+}
+```
+
+### Arguments
+
+Similar arguments as for the `main.py` file are used:
+- `-in/--input`: Should correspond to the absolute/local path to the directory where the input JSON files can be found
+- `-out/--output`: Should correspond to the absolute/local path to the directory where the output CTM files can be created
+
 ## Acknowledgements
 - [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped): Whisper Speech Recognition using word-level timestamps and confidence (License GPL v3)
 - [ASR-NL-benchmark](https://github.com/opensource-spraakherkenning-nl/ASR_NL_benchmark): ASR benchmark tool for the Dutch language (License MIT)
