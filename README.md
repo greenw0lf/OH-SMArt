@@ -5,7 +5,7 @@ Results can be found here: https://opensource-spraakherkenning-nl.github.io/ASR_
 
 ## Repo structure
 
-- `evaluation` - contains the code that runs [faster-whisper](https://github.com/SYSTRAN/faster-whisper) on audio to generate transcriptions
+- `evaluation` - contains the code for running the evaluated models. For more details, check out the README inside the folder
 - `whisper2ctm` - contains the code that converts the output of Whisper to the CTM file format required by sclite. For more details, check out the README inside the folder
 - `reference2stm` - contains the code used for processing the reference files of the datasets used in evaluation. For more details, check out the README inside the folder
 - `merge_files.py` - a helper script that merges text-like files into one (also works with CTM and STM formats)
