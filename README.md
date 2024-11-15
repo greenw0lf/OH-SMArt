@@ -34,7 +34,9 @@ The bottom level of each dataset contains the following:
 - `wer_alignments` folder - contains 2 files for each model:
     - `.dtl` - performance metrics (WER, SER, % insertions, deletions, substitutions, confusion pairs)
     - `.prf` - alignments of hypothesis and reference sentences
-- `reference.stm` - contains the reference file for the specific dataset/subset
+- `reference.stm` - contains the reference file for the specific dataset/subset, in STM format
+
+For more information about the `CTM` or `STM` formats of the hypothesis and reference respectively, check out [this repository](https://github.com/opensource-spraakherkenning-nl/ASR_NL_benchmark).
 
 ### Jasmin-CGN
 
