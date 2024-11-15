@@ -21,6 +21,43 @@ A tool to merge files of the same extension into one file. There are some option
 
 Examples can be found in the code. It is required to have all the files to be merged into one directory.
 
+## Files used to compute the results
+The hypothesis, reference, WER score + alignment files can be found in the `tar.gz` here: https://surfdrive.surf.nl/files/index.php/f/15685340255
+
+The top-level structure is represented by the 3 datasets that have been investigated:
+- Common Voice (CV)
+- Jasmin-CGN
+- N-Best 2008 Eval. Corpus
+
+The bottom level of each dataset contains the following:
+- `hyp` folder - contains the hypothesis files (output) of each model, in CTM format
+- `wer_alignments` folder - contains 2 files for each model:
+    - `.dtl` - performance metrics (WER, SER, % insertions, deletions, substitutions, confusion pairs)
+    - `.prf` - alignments of hypothesis and reference sentences
+- `reference.stm` - contains the reference file for the specific dataset/subset
+
+### Jasmin-CGN
+
+**Jasmin-CGN** has the following structure:
+- `NL/VL` - Netherlands Dutch/Flemish
+    - `comp_p/comp_q` - Conversational (HMI)/Read speech
+        - `1-5` representing each speaker group:
+            1. Native children
+            2. Native teenagers
+            3. Non-native children
+            4. Non-native adults
+            5. Native elderly
+
+For more information about the metadata of this dataset, I recommend checking out the documentation of the dataset itself.
+
+### N-Best 2008
+
+**N-Best** has the following structure:
+- `bn_nl` - Broadcast News in the Netherlands
+- `bn_vl` - Broadcast News in Belgium
+- `cts_nl` - Conversational Telephone Speech in the Netherlands
+- `cts_vl` - Conversational Telephone Speech in Belgium
+
 ## Whisper benchmarking
 
 Additional benchmarking of various Whisper implementations has been done.
